@@ -12,13 +12,26 @@ console.log("Hello World")
 // If they lose, get a message that they lose.
 // If they tie, get a message that it's a draw.
 
-function getComputerChoice(janken) {
-    return Math.floor(Math.random() * janken);
+function getComputerChoice(cpu) {
+    if ((Math.floor(Math.random() * cpu)) < 1) {
+        return "rock";
+    } else if ((Math.floor(Math.random() * cpu)) > 1) {
+        return "scissors";
+    } else {
+        return "paper";
+    }
 }
-
-const rock = "0";
-const paper = "1";
-const scissors = "2";
 
 console.log(getComputerChoice(3))
 
+function getHumanChoice() {
+    let sign = prompt("Janken? Rock, paper, or scissors?");
+
+    if (sign.toLowerCase() === "rock") {
+        log.innerText = "rock"
+    } else if (sign.toLowerCase() === "paper") {
+        log.innerText = "paper"
+    } else {
+        log.innerText = "scissors"
+    }
+}
