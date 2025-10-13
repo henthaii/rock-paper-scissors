@@ -25,13 +25,15 @@ function getComputerChoice(cpu) {
 console.log(getComputerChoice(3))
 
 function getHumanChoice() {
-    let sign = prompt("Janken? Rock, paper, or scissors?");
+    let janken = prompt("Janken? Enter rock, paper, or scissors.");
 
-    if (sign.toLowerCase() === "rock") {
-        log.innerText = "rock"
-    } else if (sign.toLowerCase() === "paper") {
-        log.innerText = "paper"
+    if (janken.toLowerCase() === "rock") {
+        console.log("rock");
+    } else if (janken.toLowerCase() === "paper") {
+        console.log("paper");
     } else {
-        log.innerText = "scissors"
+        console.log("scissors");
     }
 }
+
+getHumanChoice();
