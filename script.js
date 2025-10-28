@@ -40,3 +40,13 @@ getHumanChoice();
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice,computerChoice) {
+ // if (humanChoice = rock)
+ // make function here where the round will play, need to figure out how to add meaning to parameters
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection,computerSelection);
