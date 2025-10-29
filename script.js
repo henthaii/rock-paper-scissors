@@ -42,7 +42,13 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice,computerChoice) {
- // if (humanChoice = rock)
+ // if (humanSelection === "rock" and computerSelection === "rock") {
+ //     round is a draw, how do i add multiple layers where if it's the same, then it is a draw
+ // }
+ // else if humanSelection === "rock" and computerSelection === "scissors")
+ //     human wins, can i add multiple choices
+ // else 
+ //     computer wins   
  // make function here where the round will play, need to figure out how to add meaning to parameters
 }
 
