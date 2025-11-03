@@ -36,20 +36,18 @@ function getHumanChoice() {
     }
 }
 
-getHumanChoice();
-
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice,computerChoice) {
-    if (humanSelection === "rock" && computerSelection === "rock" || humanSelection === "paper" && computerSelection === "paper" || humanSelection === "scissors" && computerSelection === "scissors") {
-        console.log("round is a draw")
+    if (((humanChoice == "rock") && (computerChoice == "rock")) || ((humanChoice == "paper") && (computerChoice == "paper")) || ((humanChoice == "scissors") && (computerChoice == "scissors"))) {
+        console.log("round is a draw");
         alert("round is a draw");
-    } else if (humanSelection === "rock" && computerSelection === "scissors" || humanSelection === "scissors" && computerSelection === "paper" || humanSelection === "paper" && computerSelection === "rock") {
-        console.log("human wins")
+    } else if (((humanChoice == "rock") && (computerChoice == "scissors")) || ((humanChoice == "scissors") && (computerChoice == "paper")) || ((humanChoice == "paper") && (computerChoice == "rock"))) {
+        console.log("human wins");
         alert("human wins");
     } else {
-        console.log("computer wins")
+        console.log("computer wins");
         alert("computer wins");
     } 
 }
