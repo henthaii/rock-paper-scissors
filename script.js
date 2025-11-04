@@ -18,25 +18,32 @@ function getComputerChoice(cpu) {
     return choices[randomIndex];
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
 
 function getHumanChoice() {
     let janken = prompt("Janken? Enter rock, paper, or scissors.");
 
     if (janken.toLowerCase() === "rock") {
         console.log("rock");
+        return "rock";
     } else if (janken.toLowerCase() === "paper") {
         console.log("paper");
+        return "paper";
     } else {
         console.log("scissors");
+        return "scissors";
     }
 }
 
-function playRound(humanChoice,computerChoice) {
-    if ((humanChoice === "rock" && computerChoice == "rock")|| (humanChoice === "paper" && computerChoice === "paper") || (humanChoice === "scissors" && computerChoice === "scissors")) {
+function playRound(humanSelection,computerSelection) {
+    if ((humanSelection === "rock" && computerSelection == "rock") || 
+        (humanSelection === "paper" && computerSelection === "paper") || 
+        (humanSelection === "scissors" && computerSelection === "scissors")) {
         console.log("round is a draw");
         return "round is a draw";
-    } else if (((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "rock"))) {
+    } else if ((humanSelection === "rock" && computerSelection === "scissors") || 
+        (humanSelection === "scissors" && computerSelection === "paper") || 
+        (humanSelection === "paper" && computerSelection === "rock")) {
         console.log("human wins");
         return "human wins";
     } else {
@@ -49,3 +56,10 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection,computerSelection))
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    
+}
