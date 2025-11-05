@@ -39,15 +39,12 @@ function playRound(humanSelection,computerSelection) {
     if ((humanSelection === "rock" && computerSelection == "rock") || 
         (humanSelection === "paper" && computerSelection === "paper") || 
         (humanSelection === "scissors" && computerSelection === "scissors")) {
-        console.log("round is a draw");
         return "round is a draw";
     } else if ((humanSelection === "rock" && computerSelection === "scissors") || 
         (humanSelection === "scissors" && computerSelection === "paper") || 
         (humanSelection === "paper" && computerSelection === "rock")) {
-        console.log("human wins");
         return "human wins";
     } else {
-        console.log("computer wins");
         return "computer wins";
     } 
 }
@@ -61,5 +58,33 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    
+    for (let i = 1; i <= 5; i++) {
+        console.log(`--- Round ${i} ---`);
+        const playerSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log(`You chose: ${playerSelection}`);
+        console.log(`Computer chose: ${computerSelection}`);
+
+        const roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+
+        if (roundResult.includes("win")) {
+            humanScore++;
+        } else if (roundResult.includes("lose")) {
+            computerScore++;
+        }
+        console.log(`Score: Player ${humanScore} - Computer ${computerScore}`);
+    }
+
+    console.log("--- Game Over ---");
+    if (humanScore > computerScore) {
+        console.log("Congratulations! You won the game!");
+    }else if (computerScore > humanScore) {
+        console.log("Sorry, the computer won the game!");
+    } else {
+        console.log("The game is a draw!");
+    }
 }
+
+
+playGame();
