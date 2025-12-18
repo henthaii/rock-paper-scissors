@@ -20,7 +20,7 @@ function getComputerChoice(cpu) {
 
 console.log(getComputerChoice());
 
-function getHumanChoice() {
+/*function getHumanChoice() {
     let janken = prompt("Janken? Enter rock, paper, or scissors.");
 
     if (janken.toLowerCase() === "rock") {
@@ -33,7 +33,7 @@ function getHumanChoice() {
         console.log("scissors");
         return "scissors";
     }
-}
+}*/
 
 function playRound(humanSelection,computerSelection) {
     if ((humanSelection === "rock" && computerSelection == "rock") || 
@@ -49,12 +49,22 @@ function playRound(humanSelection,computerSelection) {
     } 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection,computerSelection))
+//console.log(playRound(humanSelection,computerSelection))
 
-function playGame() {
+const humanSelection = document.querySelectorAll("button");
+
+humanSelection.forEach((button) => {
+    button.addEventListener("click",function() {
+        const humanSelection = this.id;
+        const computerSelection = getComputerChoice();
+        const result = playRound(humanSelection,computerSelection);
+    });
+});
+
+/*function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
@@ -65,7 +75,7 @@ function playGame() {
         console.log(`You chose: ${playerSelection}`);
         console.log(`Computer chose: ${computerSelection}`);
 
-        const roundResult = playRound(playerSelection, computerSelection);
+        const roundResult = playRound(humanSelection, computerSelection);
         console.log(roundResult);
 
         if (roundResult.includes("win")) {
@@ -84,7 +94,7 @@ function playGame() {
     } else {
         console.log("The game is a draw!");
     }
-}
+}*/
 
 
-playGame();
+//playGame();
