@@ -54,15 +54,25 @@ function playRound(humanSelection,computerSelection) {
 
 //console.log(playRound(humanSelection,computerSelection))
 
-const humanSelection = document.querySelectorAll("button");
 
-humanSelection.forEach((button) => {
-    button.addEventListener("click",function() {
-        const humanSelection = this.id;
-        const computerSelection = getComputerChoice();
-        const result = playRound(humanSelection,computerSelection);
-    });
+
+const rockButton = document.getElementById("rock")
+const paperButton = document.getElementById("paper")
+const scissorsButton = document.getElementById("scissors")
+
+rockButton.addEventListener("click", () => {
+    humanSelection = "rock";
 });
+
+paperButton.addEventListener("click", () => {
+    humanSelection = "scissors";
+});
+
+scissorsButton.addEventListener("click", () => {
+    humanSelection = "scissors";
+});
+
+
 
 /*function playGame() {
     let humanScore = 0;
