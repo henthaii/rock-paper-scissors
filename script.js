@@ -35,6 +35,23 @@ console.log(getComputerChoice());
     }
 }*/
 
+function playGame(humanSelection){
+    const computerSelection = getComputerChoice();
+
+}
+
+
+// Janken buttons
+const rockButton = document.getElementById("rock")
+const paperButton = document.getElementById("paper")
+const scissorsButton = document.getElementById("scissors")
+
+rockButton.addEventListener("click", () => playGame('rock'));
+
+paperButton.addEventListener("click", () => playGame('paper'));
+
+scissorsButton.addEventListener("click", () => playGame('scissors'));
+
 function playRound(humanSelection,computerSelection) {
     if ((humanSelection === "rock" && computerSelection == "rock") || 
         (humanSelection === "paper" && computerSelection === "paper") || 
@@ -49,29 +66,7 @@ function playRound(humanSelection,computerSelection) {
     } 
 }
 
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
-
-//console.log(playRound(humanSelection,computerSelection))
-
-
-
-const rockButton = document.getElementById("rock")
-const paperButton = document.getElementById("paper")
-const scissorsButton = document.getElementById("scissors")
-
-rockButton.addEventListener("click", () => {
-    humanSelection = "rock";
-});
-
-paperButton.addEventListener("click", () => {
-    humanSelection = "scissors";
-});
-
-scissorsButton.addEventListener("click", () => {
-    humanSelection = "scissors";
-});
-
+console.log(playRound(humanSelection,computerSelection))
 
 
 /*function playGame() {
