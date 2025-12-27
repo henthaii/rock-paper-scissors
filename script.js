@@ -40,19 +40,39 @@ function playGame(humanSelection){
 
 }
 
+//References
+const buttons = document.querySelectorAll('button');
+const resultDisplay = document.getElementById("results");
+const humanScoreDisplay = document.getElementById("human-score");
+const computerScoreDisplay = document.getElementById("computer-score");
 
-// Janken buttons
+let humanScore = 0;
+let computerScore = 0;
+
+/*Janken buttons
 const rockButton = document.getElementById("rock")
 const paperButton = document.getElementById("paper")
 const scissorsButton = document.getElementById("scissors")
 
-rockButton.addEventListener("click", () => playGame('rock'));
+rockButton.addEventListener("click", () => playRound('rock'));
 
-paperButton.addEventListener("click", () => playGame('paper'));
+paperButton.addEventListener("click", () => playRound('paper'));
 
-scissorsButton.addEventListener("click", () => playGame('scissors'));
+scissorsButton.addEventListener("click", () => playRound('scissors'));*/
+
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        const humanSelection = button.id;
+        const computerSelection = getComputerChoice();
+        const result = playRound(humanSelection, computerSelection);
+        
+        updateDisplay(humanSelection, computerSelection, result);
+    });
+});
 
 function playRound(humanSelection,computerSelection) {
+     
+
     if ((humanSelection === "rock" && computerSelection == "rock") || 
         (humanSelection === "paper" && computerSelection === "paper") || 
         (humanSelection === "scissors" && computerSelection === "scissors")) {
@@ -60,13 +80,23 @@ function playRound(humanSelection,computerSelection) {
     } else if ((humanSelection === "rock" && computerSelection === "scissors") || 
         (humanSelection === "scissors" && computerSelection === "paper") || 
         (humanSelection === "paper" && computerSelection === "rock")) {
+        humanScore++;
         return "human wins";
+        
     } else {
+        computerScore++;
         return "computer wins";
     } 
 }
 
-console.log(playRound(humanSelection,computerSelection))
+// Function to update the UI with results and scores
+function updateDisplay(result, humanSelection, computerSelection) {
+    //resultMessage.textContent = `${result} You chose ${playerChoice}, computer chose ${computerChoice}.`;
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+}
+
+//console.log(playRound(humanSelection,computerSelection))
 
 
 /*function playGame() {
